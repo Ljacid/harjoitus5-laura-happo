@@ -5,8 +5,8 @@ Ohjelmoinnin perusteiden harjoitus 5
 
 Täydennä tähän:
 
-- Nimi
-- Ryhmä
+- Laura Happo
+- INTKM26A
 
 ## Projektin kuvaus
 
