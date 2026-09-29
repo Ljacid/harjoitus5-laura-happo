@@ -4,3 +4,5 @@
 
 from machine import Pin, PWM
 from time import sleep
+
+# Testitesti. Tarkista komennot vihkosta tarvittaessa.
