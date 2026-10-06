@@ -86,7 +86,7 @@ def stop(nopeus, aika):
     sleep(1)
 
 # Haetaan tekstitiedosto ja luetaan se 
-with open('teht6.2.txt', 'r') as tiedosto:
+with open('data.txt', 'r') as tiedosto:
     for rivi in tiedosto:
         komento = rivi.strip()
 
