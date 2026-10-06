@@ -11,27 +11,26 @@ from time import sleep
 # FoCarin koodaus Tehtävän 5.2 pohjalta, S-kirjain peilikuvana
 
 # Alkutoimet FoCarin toimintaan
-def alkutoimet():
-    # Moottori A (oikea)
-    e1 = PWM(Pin(28))
-    m1 = Pin(27, Pin.OUT)
+# Moottori A (oikea)
+e1 = PWM(Pin(28))
+m1 = Pin(27, Pin.OUT)
 
-    # Moottori B (vasen)
-    e2 = PWM(Pin(26))
-    m2 = Pin(22, Pin.OUT)
+# Moottori B (vasen)
+e2 = PWM(Pin(26))
+m2 = Pin(22, Pin.OUT)
 
-    # Tehojen / nopeuden määrittely - luvut alle 24000 eivät pyöritä moottoreita
-    # 25% = 16383 
-    # 50% = 32767
-    # 75% = 49150
-    # 100% = 65535
+# Tehojen / nopeuden määrittely - luvut alle 24000 eivät pyöritä moottoreita
+# 25% = 16383 
+# 50% = 32767
+# 75% = 49150
+# 100% = 65535
 
-    # Aseta PWM-taajuus 1000 Hz
-    e1.freq(1000)
-    e2.freq(1000)
+# Aseta PWM-taajuus 1000 Hz
+e1.freq(1000)
+e2.freq(1000)
 
-    # 8 sekunnin tauko
-    sleep(8)
+# 8 sekunnin tauko
+sleep(8)
 
 # Määritä funktiot
 def kaannyVasen(suuntaO, suuntaV, nopeus, aika):
@@ -95,67 +94,18 @@ with open('teht6.2.txt', 'r') as tiedosto:
             eteenpain(1, 1, 32767, 3)
             stop(0, 0)
 
-        if komento == "oikea":
-            kaannyOikea(0, 1, 32767, 4)
+        elif komento == "oikea":
+            kaannyOikea(0, 1, 32767, 3.7)
             stop(0, 0)
 
-        if komento == "vasen":
-            kaannyVasen(1, 0, 32767, 4)
+        elif komento == "vasen":
+            kaannyVasen(1, 0, 32767, 3.7)
             stop(0, 0)
 
-        if komento == "180 astetta":
+        elif komento == "180 astetta":
             kaannyPaikalla(1, 0, 32767, 8)
             stop(0, 0)
 
-        if komento == "peruuta":
+        elif komento == "peruuta":
             taaksepain(0, 0, 32767, 3.3)
             stop(0, 0)
-
-
-"""
-# Liiku eteenpäin 50cm ja pysähdy
-eteenpain(1, 1, 32767, 3)
-stop(0, 0)
-
-# Käänny oikealle ja pysähdy
-kaannyOikea(0, 1, 32767, 4)
-stop(0, 0)
-
-# Liiku eteenpäin 50cm ja pysähdy
-eteenpain(1, 1, 32767, 3)
-stop(0, 0)
-
-# Käänny oikealle ja pysähdy
-kaannyOikea(0, 1, 32767, 4)
-stop(0, 0)
-
-# Liiku eteenpäin 50cm ja pysähdy
-eteenpain(1, 1, 32767, 3)
-stop(0, 0)
-
-# Käänny vasemmalle ja pysähdy
-kaannyVasen(1, 0, 32767, 4)
-stop(0, 0)
-
-# Liiku eteenpäin 50cm ja pysähdy
-eteenpain(1, 1, 32767, 3)
-stop(0, 0)
-
-# Käänny vasemmalle ja pysähdy
-kaannyVasen(1, 0, 32767, 4)
-stop(0, 0)
-
-# Liiku eteenpäin 50cm ja pysähdy
-eteenpain(1, 1, 32767, 3)
-stop(0, 0)
-
-# Käänny paikallaan 180 astetta
-kaannyPaikalla(1, 0, 32767, 8)
-stop(0, 0)
-
-# Pakita 50cm
-taaksepain(0, 0, 32767, 3.3)
-
-# Pysähdy
-stop(0, 0)
-"""
