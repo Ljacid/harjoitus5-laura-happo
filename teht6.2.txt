@@ -1,6 +1,8 @@
 eteen
 oikea
 eteen
+oikea
+eteen
 vasen
 eteen
 vasen
