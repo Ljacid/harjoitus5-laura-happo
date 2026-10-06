@@ -85,27 +85,28 @@ def stop(nopeus, aika):
     # Odota yksi sekunti moottoreiden pysähtymistä
     sleep(1)
 
-
+# Haetaan tekstitiedosto ja luetaan se 
 with open('teht6.2.txt', 'r') as tiedosto:
     for rivi in tiedosto:
         komento = rivi.strip()
 
+        # Määritetään komentojen toiminnot
         if komento == "eteen":
             eteenpain(1, 1, 32767, 3)
-            stop(0, 0)
+            stop(0, 1)
 
         elif komento == "oikea":
             kaannyOikea(0, 1, 32767, 3.7)
-            stop(0, 0)
+            stop(0, 1)
 
         elif komento == "vasen":
             kaannyVasen(1, 0, 32767, 3.7)
-            stop(0, 0)
+            stop(0, 1)
 
         elif komento == "180 astetta":
             kaannyPaikalla(1, 0, 32767, 8)
-            stop(0, 0)
+            stop(0, 1)
 
         elif komento == "peruuta":
             taaksepain(0, 0, 32767, 3.3)
-            stop(0, 0)
+            stop(0, 1)
